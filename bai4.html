@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="600px" height="500px" style="border: 4px solid blueviolet"></canvas>
+<p id="color"></p>
+<script>
+    let Rectangle = function (x, y, width, height, color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+
+        this.getX = function () {
+            return this.x;
+        };
+        this.getY = function () {
+            return this.y;
+        };
+        this.getWidth = function () {
+            return this.width;
+        };
+        this.getHeight = function () {
+            return this.height;
+        };
+        this.getColor = function () {
+            return this.color;
+        }
+    };
+    let rectangle = new Rectangle(10, 10, 200, 100, '#000000');
+    let width = rectangle.getWidth();
+    let height = rectangle.getHeight();
+    let x = rectangle.getX();
+    let y = rectangle.getY();
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(x, y, width, height);
+    ctx.stroke();
+    document.getElementById('color').innerHTML = "color: " + rectangle.getColor();
+</script>
+</body>
+</html>

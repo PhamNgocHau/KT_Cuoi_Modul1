@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function printFibonacci(num) {
+        let a = 0;
+        let b = 1;
+        let result = b;
+
+        document.write(result + '<br>');
+        for (let i = 0; i < num; i++) {
+            result = a + b;
+            a = b;
+            b = result;
+
+            if (result < num) {
+                document.write(result + '<br>');
+            }
+        }
+    }
+
+    let number = parseInt(prompt('Enter number: '));
+    printFibonacci(number);
+</script>
+</body>
+</html>
